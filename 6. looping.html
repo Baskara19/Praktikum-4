@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Looping JS</title></head>
+<body>
+  <div id="daftarLoop"></div>
+  <script>
+    const nilai = [80, 75, 90, 60];
+    let html = '<h3>Looping Nilai:</h3><ol>';
+
+    for (let i = 0; i < nilai.length; i++) {
+      html += `<li>Index ${i}: ${nilai[i]}</li>`;
+    }
+    html += '</ol>';
+
+    html += '<h4>While Loop</h4><ul>';
+    let j = 0;
+    while (j < nilai.length) {
+      html += `<li>${nilai[j]}</li>`;
+      j++;
+    }
+    html += '</ul>';
+
+    document.getElementById('daftarLoop').innerHTML = html;
+  </script>
+</body>
+</html>
+
+7. Function Modular & Output (3′)
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Function JS</title></head>
+<body>
+  <div id="outFunction"></div>
+  <script>
+    function hitungRata(arr) {
+      return arr.reduce((a,b) => a + b, 0) / arr.length;
+    }
+    const cekLulus = rata => rata >= 75 ? 'Lulus' : 'Remedial';
+
+    const dataNilai = [80, 75, 90, 60];
+    const rata2 = hitungRata(dataNilai);
+    const status2 = cekLulus(rata2);
+
+    document.getElementById('outFunction').innerHTML = `
+      <p>Rata-rata: ${rata2}</p>
+      <p>Status: ${status2}</p>
+    `;
+  </script>
+</body>
+</html>
